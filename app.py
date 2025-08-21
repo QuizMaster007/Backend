@@ -9,7 +9,8 @@ load_dotenv()
 
 # Initialize Flask
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "https://frontend-henna-gamma.vercel.app"}})
+
 
 @app.route("/api/generateQuiz", methods=["POST"])
 def generate_quiz_route():
