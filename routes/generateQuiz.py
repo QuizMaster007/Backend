@@ -17,10 +17,12 @@ def generate_quiz():
         topic = data.get("topic", "General Knowledge")
         num_questions = data.get("num_questions", 10)
         difficulty = data.get("difficulty", "medium")
+        context = data.get("context", "")
         print(topic, num_questions, difficulty)
         prompt = f"""
         Generate {num_questions} multiple-choice quiz questions on the topic: "{topic}".
         Difficulty: {difficulty}.
+        Context: {context}.Use Context if given else ignore it.
         Format the response strictly as valid JSON in the following structure:
         {{
           "topic": "{topic}",
